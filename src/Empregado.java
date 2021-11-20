@@ -87,4 +87,6 @@ public class Empregado extends Pessoa {
         this.salario = salario;
     }
 
+    
+
 }

@@ -30,6 +30,7 @@ public class Sistema {
             System.out.println("5- Adicionar Fornecedor"); //feito
             System.out.println("6- Remover Fornecedor"); //feito
             System.out.println("7- Lista de Empregados"); //feito
+            System.out.println("8- Adicionar Empregados"); //feito
             System.out.println("------------------------------------");                
             int opcao = menu.nextInt();
             
@@ -65,9 +66,9 @@ public class Sistema {
                     }  
             
             case 5: {
-            Empresa.addFornecedor();                    
-            i=1; 
-            break;
+                Empresa.addFornecedor();                    
+                i=1; 
+                break;
             } 
 
             case 6: {
@@ -81,6 +82,11 @@ public class Sistema {
                 i=1; 
                 break;
                 } 
+            case 8: {
+                Empresa.addEmpregados();                    
+                i=1; 
+                break;
+            } 
               default: {
               System.out.println("Opção Inválida, Digite Novamente");
               i=1; 

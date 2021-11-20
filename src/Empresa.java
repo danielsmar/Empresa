@@ -198,9 +198,9 @@ public class Empresa {
 
     public static void Empregados(){
         listaEmpregados.add(new Empregado("Empregado 01", 38927424050L, 25, 21704555, 5000F, "Analista de Sistema"));
-        listaEmpregados.add(new Empregado("Empregado 02", 97780895076L, 35, 21704555, 1500F,  "Estagiário"));
-        listaEmpregados.add(new Empregado("Empregado 03", 47396640032L, 19, 21704555, 1100F, "Engenheiro de Software"));
-        listaEmpregados.add(new Empregado("Empregado 04", 96627689049L, 23, 21704555, 25075F,  "CEO"));
+        listaEmpregados.add(new Empregado("Empregado 02", 97780895076L, 35, 21754555, 1500F,  "Estagiário"));
+        listaEmpregados.add(new Empregado("Empregado 03", 47396640032L, 19, 21764555, 1100F, "Engenheiro de Software"));
+        listaEmpregados.add(new Empregado("Empregado 04", 96627689049L, 23, 21774555, 25075F,  "CEO"));
 
     }
 
@@ -220,6 +220,40 @@ public class Empresa {
             } 
     }     
  
+    public static void addEmpregados(){
+        int n = 1;
+
+        while(n != 0){
+            System.out.println("--------ADICIONAR EMPREGADO--------");
+            System.out.println("Digite o nome:");            
+            String nomeEmpregado = scanner.nextLine();                        
+           
+            System.out.println("Digite a Idade:");
+            int idade = scanner.nextInt();
+
+            System.out.println("Digite o CPF:");
+            long cpf = scanner.nextLong();   
+            
+            System.out.println("Digite a matrícula:");
+            int matricula= scanner.nextInt();
+
+            System.out.println("Digite o Cargo:");
+            String cargo= scanner.nextLine();
+
+            System.out.println("Digite o Salário Bruto: ");
+            Float salarioBruto = scanner.nextFloat();
+
+            listaEmpregados.add(new Empregado(nomeEmpregado, cpf, idade, matricula, salarioBruto, cargo));
+
+            System.out.println("\nEmpregado ("+ nomeEmpregado +") foi Adicionado.");
+            System.out.printf("Nome: %s | Idade: %d idade | CPF: %d | Matrícula: %d |\n Cargo: %s | Salário Bruto: %.2f | \n\n", nomeEmpregado, idade, cpf,matricula, cargo,salarioBruto);
+            
+            System.out.println("\n----Novo Fornecedor(1) ---- Voltar(0)----");
+            
+            n = scanner.nextInt();
+            scanner.nextLine();
+        }
+    }
 
     public String getNome() {
         return this.nome;
