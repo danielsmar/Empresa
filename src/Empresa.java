@@ -8,7 +8,8 @@ public class Empresa {
     private int dataFundacao;
     private CodigoPostal cp;
 
-    static Scanner scanner = new Scanner(System.in);    
+    static Scanner scanner = new Scanner(System.in); 
+    static Scanner menu = new Scanner(System.in);   
 
     
     private static List<Produto> listaProduto = new ArrayList<>();
@@ -98,8 +99,104 @@ public class Empresa {
 
         }while(j == 1);
     }
-    
+   
+    public static void menuProdutos(){
+        
+        int i = 0;
 
+        do{
+            System.out.println("--------MENU PRODUTOS--------");
+            System.out.println("0- Voltar"); //feito             
+            System.out.println("1- Mostrar Produtos"); //feito
+            System.out.println("2- Adicionar Produto"); //feito
+            System.out.println("3- Remover Produto"); //feito
+            
+            int opcao = menu.nextInt();
+
+            switch (opcao) {
+
+                case 0:{
+                    i=0;
+                    break;
+                }
+   
+                case 1: {
+                    mostrarProdutos();
+                    i=1;            
+                    break;
+                }
+                case 2: {
+                    addProdutos();    
+                    i=1;            
+                    break;
+                }
+               
+                case 3: {
+                    removerProduto();                    
+                    i=1; 
+                    break;
+                }  
+
+                default: {
+                    System.out.println("Opção Inválida, Digite Novamente");
+                    i=1; 
+                }
+            }
+
+
+        }while(i != 0);
+     
+    }
+
+    
+    public static void menuPessoas(){
+        
+        int i = 0;
+
+        do{
+            System.out.println("--------MENU PESSOAS--------");
+            System.out.println("0- Voltar"); //feito             
+            System.out.println("1- Fornecedores"); //feito
+            System.out.println("2- Empregados"); //feito
+            System.out.println("3- Clientes"); //feito
+            
+            int opcao = menu.nextInt();
+
+            switch (opcao) {
+
+                case 0:{
+                    i=0;
+                    break;
+                }
+   
+                case 1: {
+                    menuFornecedor();;
+                    i=1;            
+                    break;
+                }
+                case 2: {
+                    menuEmpregado();   
+                    i=1;            
+                    break;
+                }
+               
+                case 3: {
+                    menuCliente();                  
+                    i=1; 
+                    break;
+                }  
+
+                default: {
+                    System.out.println("Opção Inválida, Digite Novamente");
+                    i=1; 
+                }
+            }
+
+
+        }while(i != 0);
+     
+    }
+    
 
     private static List<Fornecedor> listaFornecedor = new ArrayList<>();
 
@@ -194,6 +291,55 @@ public class Empresa {
 
     }
 
+    public static void menuFornecedor(){
+        
+        int i = 0;
+
+        do{
+            System.out.println("--------MENU FORNECEDORES--------");
+            System.out.println("0- Voltar"); //feito             
+            System.out.println("1- Mostrar Fornecedores"); //feito
+            System.out.println("2- Adicionar Fornecedores"); //feito
+            System.out.println("3- Remover Fornecedores"); //feito
+            
+            int opcao = menu.nextInt();
+
+            switch (opcao) {
+
+                case 0:{
+                    i=0;
+                    break;
+                }
+   
+                case 1: {
+                    mostrarFornecedor();
+                    i=1;            
+                    break;
+                }
+                case 2: {
+                    addFornecedor();    
+                    i=1;            
+                    break;
+                }
+               
+                case 3: {
+                    removerFornecedor();                    
+                    i=1; 
+                    break;
+                }  
+
+                default: {
+                    System.out.println("Opção Inválida, Digite Novamente");
+                    i=1; 
+                }
+            }
+
+
+        }while(i != 0);
+     
+    }
+    
+    
     private static List<Empregado> listaEmpregados = new ArrayList<>();
 
     public static void Empregados(){
@@ -254,6 +400,161 @@ public class Empresa {
             scanner.nextLine();
         }
     }
+
+    public static void menuEmpregado(){
+        
+        int i = 0;
+
+        do{
+            System.out.println("--------MENU EMPREGADO--------");
+            System.out.println("0- Voltar"); //feito             
+            System.out.println("1- Mostrar Empregados"); //feito
+            System.out.println("2- Adicionar Empregado"); //feito
+            System.out.println("3- Remover Empregados"); //feito
+            
+            int opcao = menu.nextInt();
+
+            switch (opcao) {
+
+                case 0:{
+                    i=0;
+                    break;
+                }
+   
+                case 1: {
+                    mostrarEmpregados();
+                    i=1;            
+                    break;
+                }
+                case 2: {
+                    addEmpregados();    
+                    i=1;            
+                    break;
+                }
+               
+                case 3: {
+                    //removerEmpregados();                    
+                    i=1; 
+                    break;
+                }  
+
+                default: {
+                    System.out.println("Opção Inválida, Digite Novamente");
+                    i=1; 
+                }
+            }
+
+
+        }while(i != 0);
+     
+    }
+
+    private static List<Cliente> listaClientes = new ArrayList<>();
+
+    public static void Clientes(){
+        listaClientes.add(new Cliente("Cliente 01", 22430783096L, 25, 1000.00F,580.50F));
+        listaClientes.add(new Cliente("Cliente 02", 78643763047L, 35, 1500.00F,1080.60F));
+        listaClientes.add(new Cliente("Cliente 03", 83872477072L, 28, 2500.00F,2000.00F));
+        listaClientes.add(new Cliente("Cliente 04", 92182587020L, 51, 5500.00F,3240.00F));
+    }
+
+    public static void mostrarClientes(){
+        System.out.printf("\n--------Lista de Clientes--------\n");
+        int i = 1;
+        
+        for (Cliente lista: listaClientes) {
+            System.out.printf("%d- Nome: %s | Idade: %d idade | CPF: %d |\n Limite de Gastos: %.2f | Total de Dívida: %.2f | Saldo: %.2f |\n\n", i, lista.getNome(), lista.getIdade(), lista.getContribuinte(),lista.getPlafond(), lista.getValorEmDivida(), lista.getSaldo());
+            i++;
+        }
+
+        if (listaFornecedor.isEmpty())
+            {
+                System.out.println("\nLista vazia!");
+            } 
+    }
+
+    public static void addClientes(){
+        int n = 1;
+
+        while(n != 0){
+            System.out.println("--------ADICIONAR CLIENTE--------");
+            System.out.println("Digite o nome:");            
+            String nomeCliente = scanner.nextLine();                        
+           
+            System.out.println("Digite a Idade:");
+            int idade = scanner.nextInt();
+
+            System.out.println("Digite o CPF:");
+            long cpf = scanner.nextLong();   
+            
+            System.out.println("Digite o Limite de Gastos:");
+            float limite= scanner.nextFloat();
+
+            System.out.println("Digite a Dívida Atual:");
+            float divida= scanner.nextFloat();
+
+            listaClientes.add(new Cliente(nomeCliente, cpf, idade, limite, divida));
+
+            System.out.println("\nCliente ("+ nomeCliente +") foi Adicionado.");
+            System.out.printf("Nome: %s | Idade: %d idade | CPF: %d |\nLimite de Gastos: %.2f | Total de Dívida: %.2f |\n\n", nomeCliente, idade, cpf, limite, divida);          
+            
+            System.out.println("\n----Novo Cliente(1) ---- Voltar(0)----");
+            
+            n = scanner.nextInt();
+            scanner.nextLine();
+        }
+
+    }
+
+    public static void menuCliente(){
+        
+        int i = 0;
+
+        do{
+            System.out.println("--------MENU CLIENTE--------");
+            System.out.println("0- Voltar"); //feito             
+            System.out.println("1- Mostrar Clientes"); //feito
+            System.out.println("2- Adicionar Cliente"); //feito
+            System.out.println("3- Remover Cliente"); //feito
+            
+            int opcao = menu.nextInt();
+
+            switch (opcao) {
+
+                case 0:{
+                    i=0;
+                    break;
+                }
+   
+                case 1: {
+                    mostrarClientes();
+                    i=1;            
+                    break;
+                }
+                case 2: {
+                    addClientes();    
+                    i=1;            
+                    break;
+                }
+               
+                case 3: {
+                    //removerClientes();                    
+                    i=1; 
+                    break;
+                }  
+
+                default: {
+                    System.out.println("Opção Inválida, Digite Novamente");
+                    i=1; 
+                }
+            }
+
+
+        }while(i != 0);
+     
+    }
+
+
 
     public String getNome() {
         return this.nome;
