@@ -58,7 +58,7 @@ public class Empresa {
             System.out.println("\n Produto ("+ nomeProduto +") foi Adicionado.");
             System.out.printf("\nProduto: %s | Preço de venda: R$%.2f\n Quantidade em estoque: %d unidades | Código do Produto: %d\n", nomeProduto,valor, estoque, idProduto);          
             
-            System.out.println("\n----Novo pedido(1) ---- Voltar(0)----");
+            System.out.println("\n----Novo Produto(1) ---- Voltar(0)----");
             
             n = scanner.nextInt();
             scanner.nextLine();
@@ -70,7 +70,7 @@ public class Empresa {
         int j = 1;
 
         do{
-            System.out.println("\n--------Remover Produto--------\n Digite o Nome do Produto:");
+            System.out.println("\n--------Remover Produto--------\n Digite o ID do Produto:");
             int id = scanner.nextInt();
             boolean produto = false;            
     
@@ -213,7 +213,7 @@ public class Empresa {
         int i = 1;
         
         for (Fornecedor lista: listaFornecedor) {
-            System.out.printf("%d- Nome: %s | Idade: %d idade | CPF: %d |\n Limite de Gastos: %.2f | Total de Dívida: %.2f\n\n", i, lista.getNome(), lista.getIdade(), lista.getContribuinte(),lista.getPlafond(), lista.getValorEmDivida());
+            System.out.printf("%d- Nome: %s | Idade: %d idade | CPF: %d |\n Limite de Gastos: R$%.2f | Total de Dívida: R$%.2f\n\n", i, lista.getNome(), lista.getIdade(), lista.getContribuinte(),lista.getPlafond(), lista.getValorEmDivida());
             i++;
         }
 
@@ -231,10 +231,10 @@ public class Empresa {
             System.out.println("Digite o nome:");            
             String nomeFornecedor = scanner.nextLine();                        
            
-            System.out.println("Digite a Idade:");
+            System.out.println("\nDigite a Idade:");
             int idade = scanner.nextInt();
 
-            System.out.println("Digite o CPF:");
+            System.out.println("\nDigite o CPF:");
             long cpf = scanner.nextLong();   
             
             System.out.println("Digite o Limite de Gastos:");
@@ -246,7 +246,7 @@ public class Empresa {
             listaFornecedor.add(new Fornecedor(nomeFornecedor, cpf, idade, limite, divida));
 
             System.out.println("\nFornecedor ("+ nomeFornecedor +") foi Adicionado.");
-            System.out.printf("Nome: %s | Idade: %d idade | CPF: %d |\nLimite de Gastos: %.2f | Total de Dívida: %.2f |\n\n", nomeFornecedor, idade, cpf, limite, divida);          
+            System.out.printf("Nome: %s | Idade: %d idade | CPF: %d |\nLimite de Gastos: R$%.2f | Total de Dívida: R$%.2f |\n\n", nomeFornecedor, idade, cpf, limite, divida);          
             
             System.out.println("\n----Novo Fornecedor(1) ---- Voltar(0)----");
             
@@ -260,16 +260,16 @@ public class Empresa {
         int j = 1;
 
         do{
-            System.out.println("\n--------Remover Fornecedor--------\n Digite o CPF do Fornecedor:");
-            Long cpf = scanner.nextLong();
-            boolean validador = false;            
+            System.out.println("\n--------Remover Fornecedor--------\n Digite o CPF:");
+            long id = scanner.nextLong();
+            boolean fornecedor = false;            
     
             for (Fornecedor i: listaFornecedor)
             {
-                if (i.getContribuinte() == cpf){
-                    validador = true;
+                if (i.getContribuinte() == id){
+                    fornecedor = true;
                     listaFornecedor.remove(i);
-                    System.out.println("Fornecedor: " + i.getContribuinte() + " removido com sucesso!");                    
+                    System.out.println("Fornecedor: " + i.getNome() + " removido com sucesso!");                    
                     break; 
                 };
              }    
@@ -279,7 +279,7 @@ public class Empresa {
                 System.out.println("Lista vazia!");
             } 
 
-             else if(validador == false){
+             else if(fornecedor == false){
                 System.out.println("Erro: Fornecedor não encontrado.\n");
             }
 
@@ -288,7 +288,6 @@ public class Empresa {
             scanner.nextLine();
 
         }while(j == 1);
-
     }
 
     public static void menuFornecedor(){
@@ -374,31 +373,66 @@ public class Empresa {
             System.out.println("Digite o nome:");            
             String nomeEmpregado = scanner.nextLine();                        
            
-            System.out.println("Digite a Idade:");
+            System.out.println("\nDigite a Idade:");
             int idade = scanner.nextInt();
 
-            System.out.println("Digite o CPF:");
+            System.out.println("\nDigite o CPF:");
             long cpf = scanner.nextLong();   
             
-            System.out.println("Digite a matrícula:");
+            System.out.println("\nDigite a matrícula:");
             int matricula= scanner.nextInt();
 
-            System.out.println("Digite o Cargo:");
-            String cargo= scanner.nextLine();
+            System.out.println("\nDigite o Cargo:");
+            String cargo= scanner.next();
+            scanner.nextLine();
 
-            System.out.println("Digite o Salário Bruto: ");
+            System.out.println("\nDigite o Salário Bruto: ");
             Float salarioBruto = scanner.nextFloat();
 
             listaEmpregados.add(new Empregado(nomeEmpregado, cpf, idade, matricula, salarioBruto, cargo));
 
             System.out.println("\nEmpregado ("+ nomeEmpregado +") foi Adicionado.");
-            System.out.printf("Nome: %s | Idade: %d idade | CPF: %d | Matrícula: %d |\n Cargo: %s | Salário Bruto: %.2f | \n\n", nomeEmpregado, idade, cpf,matricula, cargo,salarioBruto);
+            System.out.printf("Nome: %s | Idade: %d idade | CPF: %d | Matrícula: %d |\n Cargo: %s | Salário Bruto: R$%.2f | \n\n", nomeEmpregado, idade, cpf,matricula, cargo,salarioBruto);
             
             System.out.println("\n----Novo Fornecedor(1) ---- Voltar(0)----");
             
             n = scanner.nextInt();
             scanner.nextLine();
         }
+    }
+
+    public static void removerEmpregados(){
+        int j = 1;
+
+        do{
+            System.out.println("\n--------Remover Empregado--------\n Digite a Matrícula:");
+            int id = scanner.nextInt();
+            boolean empregado = false;            
+    
+            for (Empregado i: listaEmpregados)
+            {
+                if (i.getNumeroSeccao() == id){
+                    empregado = true;
+                    listaEmpregados.remove(i);
+                    System.out.println("Empregado: " + i.getNome() + " removido com sucesso!");                    
+                    break; 
+                };
+             }    
+
+             if (listaEmpregados.isEmpty())
+            {
+                System.out.println("Lista vazia!");
+            } 
+
+             else if(empregado == false){
+                System.out.println("Erro: Produto não encontrado.\n");
+            }
+
+            System.out.println("\n----Remover outro(1) -------- Voltar(0)----");
+            j = scanner.nextInt();
+            scanner.nextLine();
+
+        }while(j == 1);
     }
 
     public static void menuEmpregado(){
@@ -433,7 +467,7 @@ public class Empresa {
                 }
                
                 case 3: {
-                    //removerEmpregados();                    
+                    removerEmpregados();                    
                     i=1; 
                     break;
                 }  
@@ -463,7 +497,7 @@ public class Empresa {
         int i = 1;
         
         for (Cliente lista: listaClientes) {
-            System.out.printf("%d- Nome: %s | Idade: %d idade | CPF: %d |\n Limite de Gastos: %.2f | Total de Dívida: %.2f | Saldo: %.2f |\n\n", i, lista.getNome(), lista.getIdade(), lista.getContribuinte(),lista.getPlafond(), lista.getValorEmDivida(), lista.getSaldo());
+            System.out.printf("%d- Nome: %s | Idade: %d idade | CPF: %d |\n Limite de Gastos: R$%.2f | Total de Dívida: R$%.2f | Saldo: R$%.2f |\n\n", i, lista.getNome(), lista.getIdade(), lista.getContribuinte(),lista.getPlafond(), lista.getValorEmDivida(), lista.getSaldo());
             i++;
         }
 
@@ -481,22 +515,22 @@ public class Empresa {
             System.out.println("Digite o nome:");            
             String nomeCliente = scanner.nextLine();                        
            
-            System.out.println("Digite a Idade:");
+            System.out.println("\nDigite a Idade:");
             int idade = scanner.nextInt();
 
-            System.out.println("Digite o CPF:");
+            System.out.println("\nDigite o CPF:");
             long cpf = scanner.nextLong();   
             
-            System.out.println("Digite o Limite de Gastos:");
+            System.out.println("\nDigite o Limite de Gastos:");
             float limite= scanner.nextFloat();
 
-            System.out.println("Digite a Dívida Atual:");
+            System.out.println("\nDigite a Dívida Atual:");
             float divida= scanner.nextFloat();
 
             listaClientes.add(new Cliente(nomeCliente, cpf, idade, limite, divida));
 
             System.out.println("\nCliente ("+ nomeCliente +") foi Adicionado.");
-            System.out.printf("Nome: %s | Idade: %d idade | CPF: %d |\nLimite de Gastos: %.2f | Total de Dívida: %.2f |\n\n", nomeCliente, idade, cpf, limite, divida);          
+            System.out.printf("Nome: %s | Idade: %d idade | CPF: %d |\nLimite de Gastos: R$%.2f | Total de Dívida: R$%.2f |\n\n", nomeCliente, idade, cpf, limite, divida);          
             
             System.out.println("\n----Novo Cliente(1) ---- Voltar(0)----");
             
