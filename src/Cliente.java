@@ -12,7 +12,7 @@ public class Cliente extends Pessoa{
     }
 
     public Cliente(String nome, Long contribuinte, int idade, float plafond, float valorEmDivida, CodigoPostal cp) {
-        super(nome, contribuinte, idade);
+        super(nome, contribuinte, idade, cp);
         this.plafond = plafond;
         this.valorEmDivida = valorEmDivida;        
     }
