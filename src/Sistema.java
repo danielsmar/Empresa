@@ -11,10 +11,10 @@ public class Sistema {
         Empresa emp = new Empresa();
 
         Sistema.limparTela();
-        Empresa.Produtos();
-        Empresa.Fornecedores();
-        Empresa.Empregados();     
-        Empresa.Clientes();
+        emp.Produtos();
+        emp.Fornecedores();
+        emp.Empregados();     
+        emp.Clientes();
         
         
         int i = 0;
@@ -39,13 +39,13 @@ public class Sistema {
                 }
 
              case 1: {
-                Empresa.menuProdutos();
+                emp.menuProdutos();
                 i=1;            
                 break;
                 }
             
                 case 2: {
-                Empresa.menuPessoas();
+                emp.menuPessoas();
                 i=1;            
                 break;
                 }
