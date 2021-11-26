@@ -3,7 +3,8 @@ public class Pessoa {
     private String nome;
     private Long contribuinte;
     private int idade;
-    //private CodigoPostal codigoPostal;
+    private CodigoPostal cp = new CodigoPostal();
+    
 
 
 
@@ -12,6 +13,8 @@ public class Pessoa {
         this.nome = nome;
         this.contribuinte = contribuinte;
         this.idade = idade; 
+        
+        
     } 
 
     public String getNome() {
@@ -38,6 +41,14 @@ public class Pessoa {
         this.idade = idade;
     }
 
+
+    public CodigoPostal getCp() {
+        return this.cp;
+    }
+
+    public void setCp(CodigoPostal cp) {
+        this.cp = cp;
+    }
    
    
 

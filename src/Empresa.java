@@ -227,10 +227,10 @@ public class Empresa {
     private  List<Fornecedor> listaFornecedor = new ArrayList<>();
 
     public  void Fornecedores(){
-        listaFornecedor.add(new Fornecedor("Fornecedor 01", 15915815980L, 25, 2500F,3000F));
-        listaFornecedor.add(new Fornecedor("Fornecedor 02", 15945815980L, 30, 2500F,3000F));
-        listaFornecedor.add(new Fornecedor("Fornecedor 03", 15914747880L, 50, 2500F,3000F));
-        listaFornecedor.add(new Fornecedor("Fornecedor 04", 17852196112L, 34, 2500F,3000F));
+        listaFornecedor.add(new Fornecedor("Fornecedor 01", 15915815980L, 25, 2500F,3000F, 29122, 158));
+        listaFornecedor.add(new Fornecedor("Fornecedor 02", 15945815980L, 30, 2500F,3000F, 28715, 994));
+        listaFornecedor.add(new Fornecedor("Fornecedor 03", 15914747880L, 50, 2500F,3000F, 29000, 570));
+        listaFornecedor.add(new Fornecedor("Fornecedor 04", 17852196112L, 34, 2500F,3000F, 25801, 591));
 
     }
 
@@ -239,7 +239,7 @@ public class Empresa {
         int i = 1;
         
         for (Fornecedor lista: listaFornecedor) {
-            System.out.printf("%d- Nome: %s | Idade: %d idade | CPF: %d |\n Limite de Gastos: R$%.2f | Total de Dívida: R$%.2f\n\n", i, lista.getNome(), lista.getIdade(), lista.getContribuinte(),lista.getPlafond(), lista.getValorEmDivida());
+            System.out.printf("%d- Nome: %s | Idade: %d idade | CPF: %d |\n Limite de Gastos: R$%.2f | Total de Dívida: R$%.2f | CEP: %d-%d\n\n", i, lista.getNome(), lista.getIdade(), lista.getContribuinte(),lista.getPlafond(), lista.getValorEmDivida(), lista.getIndicativo(), lista.getExtensao());
             i++;
         }
 
@@ -269,10 +269,16 @@ public class Empresa {
             System.out.println("Digite a Dívida Atual:");
             float divida= scanner.nextFloat();
 
-            listaFornecedor.add(new Fornecedor(nomeFornecedor, cpf, idade, limite, divida));
+            System.out.println("Digite os 5 primeiros Digitos do CEP:");
+            int indicativo = scanner.nextInt();
+
+            System.out.println("Digite os 3 ultimos Digitos do CEP:");
+            int extensao = scanner.nextInt();
+
+            listaFornecedor.add(new Fornecedor(nomeFornecedor, cpf, idade, limite, divida, indicativo, extensao));
 
             System.out.println("\nFornecedor ("+ nomeFornecedor +") foi Adicionado.");
-            System.out.printf("Nome: %s | Idade: %d idade | CPF: %d |\nLimite de Gastos: R$%.2f | Total de Dívida: R$%.2f |\n\n", nomeFornecedor, idade, cpf, limite, divida);          
+            System.out.printf("Nome: %s | Idade: %d idade | CPF: %d |\nLimite de Gastos: R$%.2f | Total de Dívida: R$%.2f | CEP: %d-%d\n\n", nomeFornecedor, idade, cpf, limite, divida, indicativo, extensao);          
             
             System.out.println("\n----Novo Fornecedor(1) ---- Voltar(0)----");
             

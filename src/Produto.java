@@ -4,6 +4,7 @@ public class Produto {
     private Float precoVendaPublico;
     private int stock; 
     private int produtoID;
+    
 
     public Produto(String designacao, Float precoVendaPublico, int stock, int produtoID) {
         this.designacao = designacao;

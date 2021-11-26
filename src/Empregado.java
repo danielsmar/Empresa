@@ -15,7 +15,7 @@ public class Empregado extends Pessoa {
         
     }  
 
-
+    // fonte: https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/Pages/irs68.aspx
     public Float calcularSalario() {     
         if(salarioBase <= 7112){
             iRS = 0.145F;

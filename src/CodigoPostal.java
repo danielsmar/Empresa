@@ -3,6 +3,8 @@ public class CodigoPostal {
     private int indicativo;
     private int extensao;
     private String zona;
+    
+
         
     public CodigoPostal(){
 
