@@ -240,7 +240,9 @@ public class Empresa {
         int i = 1;
         
         for (Fornecedor lista: listaFornecedor) {
-            System.out.printf("%d- Nome: %s | Idade: %d idade | CPF: %d |\n Limite de Gastos: R$%.2f | Total de Dívida: R$%.2f | CEP: %d\n\n", i, lista.getNome(), lista.getIdade(), lista.getContribuinte(),lista.getPlafond(), lista.getValorEmDivida());
+            System.out.printf("%d-Nome: %s | Idade: %d idade | CPF: %d |\n  Limite de Gastos: R$%.2f | Total de Dívida: R$%.2f |\n", i, lista.getNome(), lista.getIdade(),
+             lista.getContribuinte(),lista.getPlafond(), lista.getValorEmDivida());
+             lista.getCp().mostraCp();
             i++;
         }
 
@@ -389,6 +391,7 @@ public class Empresa {
         for (Empregado lista: listaEmpregados) {
             System.out.printf("%d- Nome: %s | Idade: %d idade | CPF: %d | Matrícula: %d |\n Cargo: %s | Salário Bruto: %.2f | Salário Líquido: %.2f | CEP\n\n", i, lista.getNome(), lista.getIdade(), lista.getContribuinte(), lista.getNumeroSeccao(),
             lista.getCargo(),lista.getSalarioBase(), lista.getSalario());
+            lista.getCp().mostraCp();
             i++;
         }
 
@@ -537,6 +540,7 @@ public class Empresa {
         
         for (Cliente lista: listaClientes) {
             System.out.printf("%d- Nome: %s | Idade: %d idade | CPF: %d |\n Limite de Gastos: R$%.2f | Total de Dívida: R$%.2f | Saldo: R$%.2f |\n\n", i, lista.getNome(), lista.getIdade(), lista.getContribuinte(),lista.getPlafond(), lista.getValorEmDivida(), lista.getSaldo());
+            lista.getCp().mostraCp();
             i++;
         }
 
