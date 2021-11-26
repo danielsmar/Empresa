@@ -9,7 +9,7 @@ public class Empresa {
     private String cnpj;
     private String email;
     private String telefone;
-    private CodigoPostal cp= new CodigoPostal(29122,125);
+    private CodigoPostal cp= new CodigoPostal();
 
     static Scanner scanner = new Scanner(System.in); 
     static Scanner menu = new Scanner(System.in);   
@@ -22,6 +22,8 @@ public class Empresa {
         this.dataFundacao = ("26/08/2018");
         this.email = "contato@insight.com.br";
         this.telefone= "(27)3030-7045";    
+        cp.setIndicativo(29122);
+        cp.setExtensao(125);
     }
 
     public  void mostrar(){
@@ -30,7 +32,8 @@ public class Empresa {
         System.out.println("\nCNPJ: " + getCnpj());    
         System.out.println( "E-mail: "+ getEmail()); 
         System.out.println("Contato: " + getTelefone());         
-        System.out.println("Data de Fundação: " + getDataFundacao());             
+        System.out.println("Data de Fundação: " + getDataFundacao()); 
+        System.out.println("CEP: "+ cp.getIndicativo() + "-" +cp.getExtensao()) ;            
         
 
     }

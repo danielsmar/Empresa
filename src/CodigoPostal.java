@@ -4,21 +4,19 @@ public class CodigoPostal {
     private int extensao;
     private String zona;
         
+    public CodigoPostal(){
+
+    }
 
     public CodigoPostal(int indicativo, int extensao){
         this.indicativo = indicativo;
         this.extensao = extensao;
-    }
-
-
-   
+    }   
 
     public void mostrar(){
     System.out.println("CEP:"+getIndicativo()+"-"+getExtensao());
     }
     
-
-
 
     public int getIndicativo() {
         return this.indicativo;
