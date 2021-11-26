@@ -51,7 +51,8 @@ public class Empresa {
         int i = 1;
         
         for (Produto lista: listaProduto) {
-            System.out.printf("%d- Produto: %s | Preço de venda: R$%.2f\n Quantidade em estoque: %d unidades | ID PRODUTO: %d \n\n", i, lista.getDesignacao(), lista.getPrecoVendaPublico(), lista.getStock(), lista.getProdutoID());
+            System.out.printf("%d- Produto: %s | Preço de venda: R$%.2f\n Quantidade em estoque: %d unidades | ID PRODUTO: %d | \n\n", i, lista.getDesignacao(), lista.getPrecoVendaPublico(), 
+            lista.getStock(), lista.getProdutoID());
             i++;
         }
 
@@ -227,10 +228,10 @@ public class Empresa {
     private  List<Fornecedor> listaFornecedor = new ArrayList<>();
 
     public  void Fornecedores(){
-        listaFornecedor.add(new Fornecedor("Fornecedor 01", 15915815980L, 25, 2500F,3000F, 29122, 158));
-        listaFornecedor.add(new Fornecedor("Fornecedor 02", 15945815980L, 30, 2500F,3000F, 28715, 994));
-        listaFornecedor.add(new Fornecedor("Fornecedor 03", 15914747880L, 50, 2500F,3000F, 29000, 570));
-        listaFornecedor.add(new Fornecedor("Fornecedor 04", 17852196112L, 34, 2500F,3000F, 25801, 591));
+        listaFornecedor.add(new Fornecedor("Fornecedor 01", 15915815980L, 25, 2500F,3000F, new CodigoPostal(29122,125)));
+        listaFornecedor.add(new Fornecedor("Fornecedor 02", 15945815980L, 30, 2500F,3000F, new CodigoPostal(29122,125)));
+        listaFornecedor.add(new Fornecedor("Fornecedor 03", 15914747880L, 50, 2500F,3000F, new CodigoPostal(29122,125)));
+        listaFornecedor.add(new Fornecedor("Fornecedor 04", 17852196112L, 34, 2500F,3000F, new CodigoPostal(29122,125)));
 
     }
 
@@ -239,7 +240,7 @@ public class Empresa {
         int i = 1;
         
         for (Fornecedor lista: listaFornecedor) {
-            System.out.printf("%d- Nome: %s | Idade: %d idade | CPF: %d |\n Limite de Gastos: R$%.2f | Total de Dívida: R$%.2f | CEP: %d-%d\n\n", i, lista.getNome(), lista.getIdade(), lista.getContribuinte(),lista.getPlafond(), lista.getValorEmDivida(), lista.getIndicativo(), lista.getExtensao());
+            System.out.printf("%d- Nome: %s | Idade: %d idade | CPF: %d |\n Limite de Gastos: R$%.2f | Total de Dívida: R$%.2f | CEP: %d\n\n", i, lista.getNome(), lista.getIdade(), lista.getContribuinte(),lista.getPlafond(), lista.getValorEmDivida());
             i++;
         }
 
@@ -275,7 +276,7 @@ public class Empresa {
             System.out.println("Digite os 3 ultimos Digitos do CEP:");
             int extensao = scanner.nextInt();
 
-            listaFornecedor.add(new Fornecedor(nomeFornecedor, cpf, idade, limite, divida, indicativo, extensao));
+            listaFornecedor.add(new Fornecedor(nomeFornecedor, cpf, idade, limite, divida, new CodigoPostal(indicativo,extensao)));
 
             System.out.println("\nFornecedor ("+ nomeFornecedor +") foi Adicionado.");
             System.out.printf("Nome: %s | Idade: %d idade | CPF: %d |\nLimite de Gastos: R$%.2f | Total de Dívida: R$%.2f | CEP: %d-%d\n\n", nomeFornecedor, idade, cpf, limite, divida, indicativo, extensao);          
@@ -374,10 +375,10 @@ public class Empresa {
     private  List<Empregado> listaEmpregados = new ArrayList<>();
 
     public  void Empregados(){
-        listaEmpregados.add(new Empregado("Empregado 01", 38927424050L, 25, 21704555, 5000F, "Analista de Sistema"));
-        listaEmpregados.add(new Empregado("Empregado 02", 97780895076L, 35, 21754555, 1500F,  "Estagiário"));
-        listaEmpregados.add(new Empregado("Empregado 03", 47396640032L, 19, 21764555, 1100F, "Engenheiro de Software"));
-        listaEmpregados.add(new Empregado("Empregado 04", 96627689049L, 23, 21774555, 25075F,  "CEO"));
+        listaEmpregados.add(new Empregado("Empregado 01", 38927424050L, 25, 21704555, 5000F, "Analista de Sistema", new CodigoPostal(24000, 123)));
+        listaEmpregados.add(new Empregado("Empregado 02", 97780895076L, 35, 21754555, 1500F,  "Estagiário", new CodigoPostal(24000, 123)));
+        listaEmpregados.add(new Empregado("Empregado 03", 47396640032L, 19, 21764555, 1100F, "Engenheiro de Software", new CodigoPostal(24000, 123)));
+        listaEmpregados.add(new Empregado("Empregado 04", 96627689049L, 23, 21774555, 25075F,  "CEO", new CodigoPostal(24000, 123)));
 
     }
 
@@ -386,7 +387,7 @@ public class Empresa {
         int i = 1;
         
         for (Empregado lista: listaEmpregados) {
-            System.out.printf("%d- Nome: %s | Idade: %d idade | CPF: %d | Matrícula: %d |\n Cargo: %s | Salário Bruto: %.2f | Salário Líquido: %.2f\n\n", i, lista.getNome(), lista.getIdade(), lista.getContribuinte(), lista.getNumeroSeccao(),
+            System.out.printf("%d- Nome: %s | Idade: %d idade | CPF: %d | Matrícula: %d |\n Cargo: %s | Salário Bruto: %.2f | Salário Líquido: %.2f | CEP\n\n", i, lista.getNome(), lista.getIdade(), lista.getContribuinte(), lista.getNumeroSeccao(),
             lista.getCargo(),lista.getSalarioBase(), lista.getSalario());
             i++;
         }
@@ -421,10 +422,16 @@ public class Empresa {
             System.out.println("\nDigite o Salário Bruto: ");
             Float salarioBruto = scanner.nextFloat();
 
-            listaEmpregados.add(new Empregado(nomeEmpregado, cpf, idade, matricula, salarioBruto, cargo));
+            System.out.println("Digite os 5 primeiros Digitos do CEP:");
+            int indicativo = scanner.nextInt();
+
+            System.out.println("Digite os 3 ultimos Digitos do CEP:");
+            int extensao = scanner.nextInt();
+
+            listaEmpregados.add(new Empregado(nomeEmpregado, cpf, idade, matricula, salarioBruto, cargo, new CodigoPostal(indicativo, extensao)));
 
             System.out.println("\nEmpregado ("+ nomeEmpregado +") foi Adicionado.");
-            System.out.printf("Nome: %s | Idade: %d idade | CPF: %d | Matrícula: %d |\n Cargo: %s | Salário Bruto: R$%.2f | \n\n", nomeEmpregado, idade, cpf,matricula, cargo,salarioBruto);
+            System.out.printf("Nome: %s | Idade: %d idade | CPF: %d | Matrícula: %d |\n Cargo: %s | Salário Bruto: R$%.2f |  \n\n", nomeEmpregado, idade, cpf,matricula, cargo,salarioBruto );
             
             System.out.println("\n----Novo Fornecedor(1) ---- Voltar(0)----");
             
@@ -518,10 +525,10 @@ public class Empresa {
     private List<Cliente> listaClientes = new ArrayList<>();
 
     public  void Clientes(){
-        listaClientes.add(new Cliente("Cliente 01", 22430783096L, 25, 1000.00F,580.50F));
-        listaClientes.add(new Cliente("Cliente 02", 78643763047L, 35, 1500.00F,1080.60F));
-        listaClientes.add(new Cliente("Cliente 03", 83872477072L, 28, 2500.00F,2000.00F));
-        listaClientes.add(new Cliente("Cliente 04", 92182587020L, 51, 5500.00F,3240.00F));
+        listaClientes.add(new Cliente("Cliente 01", 22430783096L, 25, 1000.00F,580.50F,new CodigoPostal(24000, 123) ));
+        listaClientes.add(new Cliente("Cliente 02", 78643763047L, 35, 1500.00F,1080.60F, new CodigoPostal(24000, 123) ));
+        listaClientes.add(new Cliente("Cliente 03", 83872477072L, 28, 2500.00F,2000.00F, new CodigoPostal(24000, 123)));
+        listaClientes.add(new Cliente("Cliente 04", 92182587020L, 51, 5500.00F,3240.00F, new CodigoPostal(24000, 123)));
     }
 
     public  void mostrarClientes(){
@@ -559,7 +566,13 @@ public class Empresa {
             System.out.println("\nDigite a Dívida Atual:");
             float divida= scanner.nextFloat();
 
-            listaClientes.add(new Cliente(nomeCliente, cpf, idade, limite, divida));
+            System.out.println("Digite os 5 primeiros Digitos do CEP:");
+            int indicativo = scanner.nextInt();
+
+            System.out.println("Digite os 3 ultimos Digitos do CEP:");
+            int extensao = scanner.nextInt();
+
+            listaClientes.add(new Cliente(nomeCliente, cpf, idade, limite, divida, new CodigoPostal(indicativo, extensao)));
 
             System.out.println("\nCliente ("+ nomeCliente +") foi Adicionado.");
             System.out.printf("Nome: %s | Idade: %d idade | CPF: %d |\nLimite de Gastos: R$%.2f | Total de Dívida: R$%.2f |\n\n", nomeCliente, idade, cpf, limite, divida);          
