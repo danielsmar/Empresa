@@ -26,8 +26,8 @@ public class Empresa {
 
     public  void mostrar(){
         System.out.println("------DADOS EMPRESARIAIS------");
-        System.out.printf("Nome Empresarial:" + getNome());    
-        System.out.println("CNPJ: " + getCnpj());    
+        System.out.printf("Nome Empresarial: " + getNome());    
+        System.out.println("\nCNPJ: " + getCnpj());    
         System.out.println( "E-mail: "+ getEmail()); 
         System.out.println("Contato: " + getTelefone());         
         System.out.println("Data de Fundação: " + getDataFundacao());             
@@ -35,15 +35,15 @@ public class Empresa {
 
     }
     
-    private static List<Produto> listaProduto = new ArrayList<>();
+    private  List<Produto> listaProduto = new ArrayList<>();
 
-    public static void Produtos(){
+    public  void Produtos(){
         listaProduto.add(new Produto("MousePad Gamer",(float) 125.90, 19, 2525));
         listaProduto.add(new Produto("Teclado Gamer",(float) 126.90, 18, 2526));
         listaProduto.add(new Produto("HeadSet Gamer",(float) 127.90, 17, 2527));
     }
 
-    public static void mostrarProdutos(){
+    public  void mostrarProdutos(){
         System.out.printf("\n--------Lista de Produtos--------\n");
         int i = 1;
         
@@ -58,7 +58,7 @@ public class Empresa {
             } 
     }     
 
-    public static void addProdutos(){
+    public  void addProdutos(){
         int n = 1;
 
         while(n != 0){
@@ -89,7 +89,7 @@ public class Empresa {
 
     }
 
-    public static void removerProduto(){
+    public  void removerProduto(){
         int j = 1;
 
         do{
@@ -123,7 +123,7 @@ public class Empresa {
         }while(j == 1);
     }
    
-    public static void menuProdutos(){
+    public  void menuProdutos(){
         
         int i = 0;
 
@@ -172,7 +172,7 @@ public class Empresa {
     }
 
     
-    public static void menuPessoas(){
+    public void menuPessoas(){
         
         int i = 0;
 
@@ -221,9 +221,9 @@ public class Empresa {
     }
     
 
-    private static List<Fornecedor> listaFornecedor = new ArrayList<>();
+    private  List<Fornecedor> listaFornecedor = new ArrayList<>();
 
-    public static void Fornecedores(){
+    public  void Fornecedores(){
         listaFornecedor.add(new Fornecedor("Fornecedor 01", 15915815980L, 25, 2500F,3000F));
         listaFornecedor.add(new Fornecedor("Fornecedor 02", 15945815980L, 30, 2500F,3000F));
         listaFornecedor.add(new Fornecedor("Fornecedor 03", 15914747880L, 50, 2500F,3000F));
@@ -231,7 +231,7 @@ public class Empresa {
 
     }
 
-    public static void mostrarFornecedor(){
+    public  void mostrarFornecedor(){
         System.out.printf("\n--------Lista de Fornecedores--------\n");
         int i = 1;
         
@@ -246,7 +246,7 @@ public class Empresa {
             } 
     }     
     
-    public static void addFornecedor(){
+    public  void addFornecedor(){
         int n = 1;
 
         while(n != 0){
@@ -279,7 +279,7 @@ public class Empresa {
 
     }
 
-    public static void removerFornecedor(){
+    public  void removerFornecedor(){
         int j = 1;
 
         do{
@@ -313,7 +313,7 @@ public class Empresa {
         }while(j == 1);
     }
 
-    public static void menuFornecedor(){
+    public  void menuFornecedor(){
         
         int i = 0;
 
@@ -362,9 +362,9 @@ public class Empresa {
     }
     
     
-    private static List<Empregado> listaEmpregados = new ArrayList<>();
+    private  List<Empregado> listaEmpregados = new ArrayList<>();
 
-    public static void Empregados(){
+    public  void Empregados(){
         listaEmpregados.add(new Empregado("Empregado 01", 38927424050L, 25, 21704555, 5000F, "Analista de Sistema"));
         listaEmpregados.add(new Empregado("Empregado 02", 97780895076L, 35, 21754555, 1500F,  "Estagiário"));
         listaEmpregados.add(new Empregado("Empregado 03", 47396640032L, 19, 21764555, 1100F, "Engenheiro de Software"));
@@ -372,7 +372,7 @@ public class Empresa {
 
     }
 
-    public static void mostrarEmpregados() {
+    public  void mostrarEmpregados() {
         System.out.printf("\n--------Lista de Empregados--------\n");
         int i = 1;
         
@@ -388,7 +388,7 @@ public class Empresa {
             } 
     }     
  
-    public static void addEmpregados(){
+    public  void addEmpregados(){
         int n = 1;
 
         while(n != 0){
@@ -424,7 +424,7 @@ public class Empresa {
         }
     }
 
-    public static void removerEmpregados(){
+    public  void removerEmpregados(){
         int j = 1;
 
         do{
@@ -458,7 +458,7 @@ public class Empresa {
         }while(j == 1);
     }
 
-    public static void menuEmpregado(){
+    public  void menuEmpregado(){
         
         int i = 0;
 
@@ -506,16 +506,16 @@ public class Empresa {
      
     }
 
-    private static List<Cliente> listaClientes = new ArrayList<>();
+    private List<Cliente> listaClientes = new ArrayList<>();
 
-    public static void Clientes(){
+    public  void Clientes(){
         listaClientes.add(new Cliente("Cliente 01", 22430783096L, 25, 1000.00F,580.50F));
         listaClientes.add(new Cliente("Cliente 02", 78643763047L, 35, 1500.00F,1080.60F));
         listaClientes.add(new Cliente("Cliente 03", 83872477072L, 28, 2500.00F,2000.00F));
         listaClientes.add(new Cliente("Cliente 04", 92182587020L, 51, 5500.00F,3240.00F));
     }
 
-    public static void mostrarClientes(){
+    public  void mostrarClientes(){
         System.out.printf("\n--------Lista de Clientes--------\n");
         int i = 1;
         
@@ -530,7 +530,7 @@ public class Empresa {
             } 
     }
 
-    public static void addClientes(){
+    public  void addClientes(){
         int n = 1;
 
         while(n != 0){
@@ -563,7 +563,7 @@ public class Empresa {
 
     }
 
-    public static void menuCliente(){
+    public  void menuCliente(){
         
         int i = 0;
 
