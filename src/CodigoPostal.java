@@ -15,7 +15,8 @@ public class CodigoPostal {
         this.extensao = extensao;
     }   
 
-    public void mostrar(){
+
+    public void mostrarCp(){
     System.out.println("CEP:"+getIndicativo()+"-"+getExtensao());
     }
     

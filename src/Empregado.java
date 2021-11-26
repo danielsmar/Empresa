@@ -15,6 +15,14 @@ public class Empregado extends Pessoa {
         
     }  
 
+    public Empregado(String nome, Long contribuinte, int idade, int numeroSeccao, Float salarioBase, String cargo, CodigoPostal cp) {
+        super(nome, contribuinte, idade, cp);
+        this.numeroSeccao = numeroSeccao;
+        this.salarioBase = salarioBase;             
+        this.cargo = cargo;
+        
+    } 
+
     // fonte: https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/Pages/irs68.aspx
     public Float calcularSalario() {     
         if(salarioBase <= 7112){

@@ -5,22 +5,18 @@ public class Fornecedor extends Pessoa {
    
     private Float plafond;
     private Float valorEmDivida;
-    private int extensao;
-    private int indicativo;
-    private CodigoPostal cp = new CodigoPostal();
     
-
     
-
-
-    public Fornecedor(String nome, Long contribuinte, int idade, float plafond, float valorEmDivida, int indicativo, int extensao) {
+    public Fornecedor(String nome, Long contribuinte, int idade, float plafond, float valorEmDivida) {
         super(nome, contribuinte, idade);
         this.plafond = plafond;
-        this.valorEmDivida = valorEmDivida;    
-        cp.setIndicativo(indicativo);
-        cp.setExtensao(extensao);
-           
-        
+        this.valorEmDivida = valorEmDivida;       
+    }
+    
+    public Fornecedor(String nome, Long contribuinte, int idade, float plafond, float valorEmDivida, CodigoPostal cp) {
+        super(nome, contribuinte, idade, cp);
+        this.plafond = plafond;
+        this.valorEmDivida = valorEmDivida;       
     }
     
 
@@ -41,30 +37,10 @@ public class Fornecedor extends Pessoa {
     }
 
 
-    public int getExtensao() {
-        return this.extensao;
-    }
-
-    public void setExtensao(int extensao) {
-        this.extensao = extensao;
-    }
-
-    public int getIndicativo() {
-        return this.indicativo;
-    }
-
-    public void setIndicativo(int indicativo) {
-        this.indicativo = indicativo;
-    }
+   
 
 
-    public CodigoPostal getCp() {
-        return this.cp;
-    }
-
-    public void setCp(CodigoPostal cp) {
-        this.cp = cp;
-    }
+    
     
 
 
