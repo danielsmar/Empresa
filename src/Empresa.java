@@ -25,8 +25,8 @@ public class Empresa {
     }
 
     public  void mostrar(){
-        System.out.println("------DADOS EMPRESARIAIS------");
-        System.out.printf("Nome Empresarial: " + getNome());    
+        System.out.println("---------DADOS EMPRESARIAIS---------");
+        System.out.printf(getNome());    
         System.out.println("\nCNPJ: " + getCnpj());    
         System.out.println( "E-mail: "+ getEmail()); 
         System.out.println("Contato: " + getTelefone());         
