@@ -389,7 +389,7 @@ public class Empresa {
         int i = 1;
         
         for (Empregado lista: listaEmpregados) {
-            System.out.printf("%d- Nome: %s | Idade: %d idade | CPF: %d | Matrícula: %d |\n Cargo: %s | Salário Bruto: %.2f | Salário Líquido: %.2f | CEP\n\n", i, lista.getNome(), lista.getIdade(), lista.getContribuinte(), lista.getNumeroSeccao(),
+            System.out.printf("%d-Nome: %s | Idade: %d idade | CPF: %d | Matrícula: %d |\n  Cargo: %s | Salário Bruto: %.2f | Salário Líquido: %.2f |\n", i, lista.getNome(), lista.getIdade(), lista.getContribuinte(), lista.getNumeroSeccao(),
             lista.getCargo(),lista.getSalarioBase(), lista.getSalario());
             lista.getCp().mostraCp();
             i++;
@@ -434,7 +434,7 @@ public class Empresa {
             listaEmpregados.add(new Empregado(nomeEmpregado, cpf, idade, matricula, salarioBruto, cargo, new CodigoPostal(indicativo, extensao)));
 
             System.out.println("\nEmpregado ("+ nomeEmpregado +") foi Adicionado.");
-            System.out.printf("Nome: %s | Idade: %d idade | CPF: %d | Matrícula: %d |\n Cargo: %s | Salário Bruto: R$%.2f |  \n\n", nomeEmpregado, idade, cpf,matricula, cargo,salarioBruto );
+            System.out.printf("Nome: %s | Idade: %d idade | CPF: %d | Matrícula: %d |\nCargo: %s | Salário Bruto: R$%.2f | CEP: %d-%d  \n\n", nomeEmpregado, idade, cpf,matricula, cargo,salarioBruto,indicativo, extensao);
             
             System.out.println("\n----Novo Fornecedor(1) ---- Voltar(0)----");
             
@@ -467,7 +467,7 @@ public class Empresa {
             } 
 
              else if(empregado == false){
-                System.out.println("Erro: Produto não encontrado.\n");
+                System.out.println("Erro: Empregado não encontrado.\n");
             }
 
             System.out.println("\n----Remover outro(1) -------- Voltar(0)----");
@@ -539,7 +539,7 @@ public class Empresa {
         int i = 1;
         
         for (Cliente lista: listaClientes) {
-            System.out.printf("%d- Nome: %s | Idade: %d idade | CPF: %d |\n Limite de Gastos: R$%.2f | Total de Dívida: R$%.2f | Saldo: R$%.2f |\n\n", i, lista.getNome(), lista.getIdade(), lista.getContribuinte(),lista.getPlafond(), lista.getValorEmDivida(), lista.getSaldo());
+            System.out.printf("%d-Nome: %s | Idade: %d idade | CPF: %d |\n  Limite de Gastos: R$%.2f | Total de Dívida: R$%.2f | Saldo: R$%.2f |\n", i, lista.getNome(), lista.getIdade(), lista.getContribuinte(),lista.getPlafond(), lista.getValorEmDivida(), lista.getSaldo());
             lista.getCp().mostraCp();
             i++;
         }
@@ -579,7 +579,7 @@ public class Empresa {
             listaClientes.add(new Cliente(nomeCliente, cpf, idade, limite, divida, new CodigoPostal(indicativo, extensao)));
 
             System.out.println("\nCliente ("+ nomeCliente +") foi Adicionado.");
-            System.out.printf("Nome: %s | Idade: %d idade | CPF: %d |\nLimite de Gastos: R$%.2f | Total de Dívida: R$%.2f |\n\n", nomeCliente, idade, cpf, limite, divida);          
+            System.out.printf("Nome: %s | Idade: %d idade | CPF: %d |\nLimite de Gastos: R$%.2f | Total de Dívida: R$%.2f | CEP: %d-%d |\n\n", nomeCliente, idade, cpf, limite, divida, indicativo, extensao);          
             
             System.out.println("\n----Novo Cliente(1) ---- Voltar(0)----");
             
@@ -587,6 +587,40 @@ public class Empresa {
             scanner.nextLine();
         }
 
+    }
+
+    public  void removerClientes(){
+        int j = 1;
+
+        do{
+            System.out.println("\n--------Remover Clientes--------\n Digite o CPF:");
+            long id = scanner.nextLong();
+            boolean clientes = false;            
+    
+            for (Cliente i: listaClientes)
+            {
+                if (i.getContribuinte() == id){
+                    clientes = true;
+                    listaClientes.remove(i);
+                    System.out.println("Cliente: " + i.getNome() + " removido com sucesso!");                    
+                    break; 
+                };
+             }    
+
+             if (listaClientes.isEmpty())
+            {
+                System.out.println("Lista vazia!");
+            } 
+
+             else if(clientes == false){
+                System.out.println("Erro: Cliente não encontrado.\n");
+            }
+
+            System.out.println("\n----Remover outro(1) -------- Voltar(0)----");
+            j = scanner.nextInt();
+            scanner.nextLine();
+
+        }while(j == 1);
     }
 
     public  void menuCliente(){
@@ -621,7 +655,7 @@ public class Empresa {
                 }
                
                 case 3: {
-                    //removerClientes();                    
+                    removerClientes();                    
                     i=1; 
                     break;
                 }  

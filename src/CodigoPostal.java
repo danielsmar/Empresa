@@ -18,27 +18,27 @@ public class CodigoPostal {
 
     public void mostraCp() {
         if (getIndicativo()/10000 == 0){
-            this.setZona("Grande SP");
+            this.setZona("|Grande SP|");
         } else if (getIndicativo()/10000 == 1){
-            this.setZona("Interior e Litoral de SP");
+            this.setZona("|Interior e Litoral de SP|");
         } else if (getIndicativo()/10000 == 2){
-            this.setZona("RJ e ES");
+            this.setZona("|RJ|ES|");
         } else if (getIndicativo()/10000 == 3){
-            this.setZona("MG");
+            this.setZona("|MG|");
         } else if (getIndicativo()/10000 == 4){
-            this.setZona("BH e SE");
+            this.setZona("|BH|SE|");
         } else if (getIndicativo()/10000 == 5){
-            this.setZona("PE, AL PB e RN");
+            this.setZona("|PE|AL|PB|RN|");
         } else if (getIndicativo()/10000 == 6){
-            this.setZona("CE, PI, MA, PA, AP, AM, RR e AC");
+            this.setZona("|CE|PI|MA|PA|AP|AM|RR|AC|");
         } else if (getIndicativo()/10000 == 7){
-            this.setZona("DF, GO, RO, TO, MT e MS");
+            this.setZona("|DF|GO|RO|TO|MT|MS|");
         } else if (getIndicativo()/10000 == 8){
-            this.setZona("PR e SC");
+            this.setZona("|PR|SC|");
         } else{
             this.setZona("RS");
         }
-        System.out.println("  "+getIndicativo()+"-"+getExtensao()+", "+ getZona());
+        System.out.println("  CEP: "+getIndicativo()+"-"+getExtensao()+", "+ getZona());
     }
     
 
