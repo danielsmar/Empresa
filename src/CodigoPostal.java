@@ -3,10 +3,18 @@ public class CodigoPostal {
     private int indicativo;
     private int extensao;
     private String zona;
-    
+        
+
+    public CodigoPostal(int indicativo, int extensao){
+        this.indicativo = indicativo;
+        this.extensao = extensao;
+    }
+
+
+   
 
     public void mostrar(){
-
+    System.out.println("CEP:"+getIndicativo()+"-"+getExtensao());
     }
     
 

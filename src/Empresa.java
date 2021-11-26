@@ -5,12 +5,35 @@ import java.util.Scanner;
 public class Empresa {
     
     private String nome;
-    private int dataFundacao;
-    private CodigoPostal cp;
+    private String dataFundacao;
+    private String cnpj;
+    private String email;
+    private String telefone;
+    private CodigoPostal cp= new CodigoPostal(29122,125);
 
     static Scanner scanner = new Scanner(System.in); 
     static Scanner menu = new Scanner(System.in);   
 
+    
+
+    public Empresa(){
+        this.nome = "INSIGHT SOLUCOES EM TECNOLOGIA E COMPLIANCE LTDA.";
+        this.cnpj = "29.779.498/0001-14";
+        this.dataFundacao = ("26/08/2018");
+        this.email = "contato@insight.com.br";
+        this.telefone= "(27)3030-7045";    
+    }
+
+    public  void mostrar(){
+        System.out.println("------DADOS EMPRESARIAIS------");
+        System.out.printf("Nome Empresarial:" + getNome());    
+        System.out.println("CNPJ: " + getCnpj());    
+        System.out.println( "E-mail: "+ getEmail()); 
+        System.out.println("Contato: " + getTelefone());         
+        System.out.println("Data de Fundação: " + getDataFundacao());             
+        
+
+    }
     
     private static List<Produto> listaProduto = new ArrayList<>();
 
@@ -589,7 +612,6 @@ public class Empresa {
     }
 
 
-
     public String getNome() {
         return this.nome;
     }
@@ -598,11 +620,11 @@ public class Empresa {
         this.nome = nome;
     }
 
-    public int getDataFundacao() {
+    public String getDataFundacao() {
         return this.dataFundacao;
     }
 
-    public void setDataFundacao(int dataFundacao) {
+    public void setDataFundacao(String dataFundacao) {
         this.dataFundacao = dataFundacao;
     }
 
@@ -614,5 +636,31 @@ public class Empresa {
         this.cp = cp;
     }
 
+
+    public String getCnpj() {
+        return this.cnpj;
+    }
+
+    public void setCnpj(String cnpj) {
+        this.cnpj = cnpj;
+    }
+
+   
+
+    public String getEmail() {
+        return this.email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getTelefone() {
+        return this.telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
 
 }

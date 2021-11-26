@@ -8,11 +8,14 @@ public class Sistema {
     }
     
     public static void main(String[] args) throws Exception {
+        Empresa emp = new Empresa();
+
         Sistema.limparTela();
         Empresa.Produtos();
         Empresa.Fornecedores();
         Empresa.Empregados();     
         Empresa.Clientes();
+        
         
         int i = 0;
 
@@ -22,7 +25,8 @@ public class Sistema {
             System.out.println("--------SISTEMA EMPRESARIAL--------");
             System.out.println("0- Sair"); //feito             
             System.out.println("1- Menu Produtos"); //feito       
-            System.out.println("2- Menu Pessoas"); //feito            
+            System.out.println("2- Menu Pessoas"); //feito       
+            System.out.println("3- Dados Empresa"); //feito     
             System.out.println("------------------------------------");                
             int opcao = menu.nextInt();
             
@@ -45,6 +49,14 @@ public class Sistema {
                 i=1;            
                 break;
                 }
+
+                case 3: {
+                emp.mostrar(); 
+                    
+                    
+                    i=1;            
+                    break;
+                    }
              default: {
                 System.out.println("Opção Inválida, Digite Novamente");
                 i=1; 
