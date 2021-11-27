@@ -228,10 +228,10 @@ public class Empresa {
     private  List<Fornecedor> listaFornecedor = new ArrayList<>();
 
     public  void Fornecedores(){
-        listaFornecedor.add(new Fornecedor("Fornecedor 01", 15915815980L, 25, 2500F,3000F, new CodigoPostal(29122,125)));
-        listaFornecedor.add(new Fornecedor("Fornecedor 02", 15945815980L, 30, 2500F,3000F, new CodigoPostal(29122,125)));
-        listaFornecedor.add(new Fornecedor("Fornecedor 03", 15914747880L, 50, 2500F,3000F, new CodigoPostal(29122,125)));
-        listaFornecedor.add(new Fornecedor("Fornecedor 04", 17852196112L, 34, 2500F,3000F, new CodigoPostal(29122,125)));
+        listaFornecedor.add(new Fornecedor("Evelyn Melo Barbosa", 15915815980L, 25, 2500F,3000F, new CodigoPostal(83030,370)));
+        listaFornecedor.add(new Fornecedor("Julia Dias Goncalves", 15945815980L, 30, 2500F,3000F, new CodigoPostal(72872,063)));
+        listaFornecedor.add(new Fornecedor("Nicolas Cunha Almeida", 15914747880L, 50, 2500F,3000F, new CodigoPostal(35900,017)));
+        listaFornecedor.add(new Fornecedor("Alice Sousa Castro", 17852196112L, 34, 2500F,3000F, new CodigoPostal(13082,632)));
 
     }
 
@@ -240,7 +240,7 @@ public class Empresa {
         int i = 1;
         
         for (Fornecedor lista: listaFornecedor) {
-            System.out.printf("%d-Nome: %s | Idade: %d idade | CPF: %d |\n  Limite de Gastos: R$%.2f | Total de Dívida: R$%.2f |\n", i, lista.getNome(), lista.getIdade(),
+            System.out.printf("\n%d-Nome: %s | Idade: %d idade | CPF: %d |\n  Limite de Gastos: R$%.2f | Total de Dívida: R$%.2f |\n", i, lista.getNome(), lista.getIdade(),
              lista.getContribuinte(),lista.getPlafond(), lista.getValorEmDivida());
              lista.getCp().mostraCp();
             i++;
@@ -422,10 +422,10 @@ public class Empresa {
     private  List<Empregado> listaEmpregados = new ArrayList<>();
 
     public  void Empregados(){
-        listaEmpregados.add(new Empregado("Empregado 01", 38927424050L, 25, 21704555, 5000F, "Analista de Sistema", new CodigoPostal(24000, 123)));
-        listaEmpregados.add(new Empregado("Empregado 02", 97780895076L, 35, 21754555, 1500F,  "Estagiário", new CodigoPostal(24000, 123)));
-        listaEmpregados.add(new Empregado("Empregado 03", 47396640032L, 19, 21764555, 1100F, "Engenheiro de Software", new CodigoPostal(24000, 123)));
-        listaEmpregados.add(new Empregado("Empregado 04", 96627689049L, 23, 21774555, 25075F,  "CEO", new CodigoPostal(24000, 123)));
+        listaEmpregados.add(new Empregado("Leonardo Castro Melo", 38927424050L, 25, 21704555, 5000F, "Analista de Sistema", new CodigoPostal(89066, 705)));
+        listaEmpregados.add(new Empregado("Joao Fernandes Martins", 97780895076L, 35, 21754555, 1500F,  "Estagiário", new CodigoPostal(31365, 260)));
+        listaEmpregados.add(new Empregado("Otávio Oliveira Costa", 47396640032L, 19, 21764555, 1100F, "Engenheiro de Software", new CodigoPostal(85869,636)));
+        listaEmpregados.add(new Empregado("Vinícius Cunha Castro", 96627689049L, 23, 21774555, 25075F,  "CEO", new CodigoPostal(17194, 010)));
 
     }
 
@@ -434,7 +434,7 @@ public class Empresa {
         int i = 1;
         
         for (Empregado lista: listaEmpregados) {
-            System.out.printf("%d-Nome: %s | Idade: %d idade | CPF: %d | Matrícula: %d |\n  Cargo: %s | Salário Bruto: %.2f | Salário Líquido: %.2f |\n", i, lista.getNome(), lista.getIdade(), lista.getContribuinte(), lista.getNumeroSeccao(),
+            System.out.printf("\n%d-Nome: %s | Idade: %d idade | CPF: %d | Matrícula: %d |\n  Cargo: %s | Salário Bruto: %.2f | Salário Líquido: %.2f |\n", i, lista.getNome(), lista.getIdade(), lista.getContribuinte(), lista.getNumeroSeccao(),
             lista.getCargo(),lista.getSalarioBase(), lista.getSalario());
             lista.getCp().mostraCp();
             i++;
@@ -618,10 +618,10 @@ public class Empresa {
     private List<Cliente> listaClientes = new ArrayList<>();
 
     public  void Clientes(){
-        listaClientes.add(new Cliente("Cliente 01", 22430783096L, 25, 1000.00F,580.50F,new CodigoPostal(24000, 123) ));
-        listaClientes.add(new Cliente("Cliente 02", 78643763047L, 35, 1500.00F,1080.60F, new CodigoPostal(24000, 123) ));
-        listaClientes.add(new Cliente("Cliente 03", 83872477072L, 28, 2500.00F,2000.00F, new CodigoPostal(24000, 123)));
-        listaClientes.add(new Cliente("Cliente 04", 92182587020L, 51, 5500.00F,3240.00F, new CodigoPostal(24000, 123)));
+        listaClientes.add(new Cliente("Isabela Martins Rocha", 22430783096L, 25, 1000.00F,580.50F,new CodigoPostal(16624, 130) ));
+        listaClientes.add(new Cliente("Laura Cavalcante Araujo", 78643763047L, 35, 1500.00F,1080.60F, new CodigoPostal(24746, 440) ));
+        listaClientes.add(new Cliente("Lucas Rodrigues Cunha", 83872477072L, 28, 2500.00F,2000.00F, new CodigoPostal(91570, 140)));
+        listaClientes.add(new Cliente("Emily Melo Fernandes", 92182587020L, 51, 5500.00F,3240.00F, new CodigoPostal(26519, 140)));
     }
 
     public  void mostrarClientes(){
@@ -629,7 +629,7 @@ public class Empresa {
         int i = 1;
         
         for (Cliente lista: listaClientes) {
-            System.out.printf("%d-Nome: %s | Idade: %d idade | CPF: %d |\n  Limite de Gastos: R$%.2f | Total de Dívida: R$%.2f | Saldo: R$%.2f |\n", i, lista.getNome(), lista.getIdade(), lista.getContribuinte(),lista.getPlafond(), lista.getValorEmDivida(), lista.getSaldo());
+            System.out.printf("\n%d-Nome: %s | Idade: %d idade | CPF: %d |\n  Limite de Gastos: R$%.2f | Total de Dívida: R$%.2f | Saldo: R$%.2f |\n", i, lista.getNome(), lista.getIdade(), lista.getContribuinte(),lista.getPlafond(), lista.getValorEmDivida(), lista.getSaldo());
             lista.getCp().mostraCp();
             i++;
         }
