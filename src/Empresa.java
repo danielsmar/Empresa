@@ -264,7 +264,22 @@ public class Empresa {
             int idade = scanner.nextInt();
 
             System.out.println("\nDigite o CPF:");
-            long cpf = scanner.nextLong();   
+            long cpf = scanner.nextLong();               
+            int i=1;
+
+            while(i!=0){
+                String s = Long.toString(cpf);
+                if(s.length() != 11){
+                    
+                    System.out.println("Digite os 11 números do CPF");
+                    System.out.println("\nDigite o CPF:");
+                    cpf = scanner.nextLong();
+                    i=1;
+                }
+                else{
+                    i=0;
+                }
+            }
             
             System.out.println("Digite o Limite de Gastos:");
             float limite= scanner.nextFloat();
@@ -414,7 +429,22 @@ public class Empresa {
 
             System.out.println("\nDigite o CPF:");
             long cpf = scanner.nextLong();   
+            int i=1;
             
+            while(i!=0){
+                String s = Long.toString(cpf);
+                if(s.length() != 11){
+                    
+                    System.out.println("Digite os 11 números do CPF");
+                    System.out.println("\nDigite o CPF:");
+                    cpf = scanner.nextLong();
+                    i=1;
+                }
+                else{
+                    i=0;
+                }
+            }
+
             System.out.println("\nDigite a matrícula:");
             int matricula= scanner.nextInt();
 
@@ -563,7 +593,22 @@ public class Empresa {
 
             System.out.println("\nDigite o CPF:");
             long cpf = scanner.nextLong();   
+            int i=1;
             
+            while(i!=0){
+                String s = Long.toString(cpf);
+                if(s.length() != 11){
+                    
+                    System.out.println("Digite os 11 números do CPF");
+                    System.out.println("\nDigite o CPF:");
+                    cpf = scanner.nextLong();
+                    i=1;
+                }
+                else{
+                    i=0;
+                }
+            }
+
             System.out.println("\nDigite o Limite de Gastos:");
             float limite= scanner.nextFloat();
 
