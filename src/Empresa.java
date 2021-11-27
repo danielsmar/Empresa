@@ -281,17 +281,47 @@ public class Empresa {
                 }
             }
             
-            System.out.println("Digite o Limite de Gastos:");
+            System.out.println("\nDigite o Limite de Gastos:");
             float limite= scanner.nextFloat();
 
-            System.out.println("Digite a Dívida Atual:");
+            System.out.println("\nDigite a Dívida Atual:");
             float divida= scanner.nextFloat();
 
-            System.out.println("Digite os 5 primeiros Digitos do CEP:");
+            System.out.println("\nDigite os 5 primeiros Digitos do CEP:");
             int indicativo = scanner.nextInt();
+            int j=1;
+            
+            while(j!=0){
+                String s = Integer.toString(indicativo);
+                if(s.length() != 5){
+                    
+                    System.out.println("ERRO: Digite os 5 primeiros números do CEP");
+                    System.out.println("\nDigite os 5 primeiros Digitos do CEP:");
+                    indicativo = scanner.nextInt();
+                    j=1;
+                }
+                else{
+                    j=0;
+                }
+            }
 
-            System.out.println("Digite os 3 ultimos Digitos do CEP:");
+            System.out.println("\nDigite os 3 ultimos Digitos do CEP:");
             int extensao = scanner.nextInt();
+            int k=1;
+            
+            while(k!=0){
+                String s = Integer.toString(extensao);
+                if(s.length() != 3){
+                    
+                    System.out.println("ERRO: Digite os 3 últimos números do CEP");
+                    System.out.println("\nDigite os 3 últimos Digitos do CEP:");
+                    extensao = scanner.nextInt();
+                    k=1;
+                }
+                else{
+                    k=0;
+                }
+            }
 
             listaFornecedor.add(new Fornecedor(nomeFornecedor, cpf, idade, limite, divida, new CodigoPostal(indicativo,extensao)));
 
@@ -457,9 +487,39 @@ public class Empresa {
 
             System.out.println("Digite os 5 primeiros Digitos do CEP:");
             int indicativo = scanner.nextInt();
+            int j=1;
+            
+            while(j!=0){
+                String s = Integer.toString(indicativo);
+                if(s.length() != 5){
+                    
+                    System.out.println("ERRO: Digite os 5 primeiros números do CEP");
+                    System.out.println("\nDigite os 5 primeiros Digitos do CEP:");
+                    indicativo = scanner.nextInt();
+                    j=1;
+                }
+                else{
+                    j=0;
+                }
+            }
 
             System.out.println("Digite os 3 ultimos Digitos do CEP:");
             int extensao = scanner.nextInt();
+            int k=1;
+            
+            while(k!=0){
+                String s = Integer.toString(extensao);
+                if(s.length() != 3){
+                    
+                    System.out.println("ERRO: Digite os 3 últimos números do CEP");
+                    System.out.println("\nDigite os 3 últimos Digitos do CEP:");
+                    extensao = scanner.nextInt();
+                    k=1;
+                }
+                else{
+                    k=0;
+                }
+            }
 
             listaEmpregados.add(new Empregado(nomeEmpregado, cpf, idade, matricula, salarioBruto, cargo, new CodigoPostal(indicativo, extensao)));
 
@@ -617,9 +677,39 @@ public class Empresa {
 
             System.out.println("Digite os 5 primeiros Digitos do CEP:");
             int indicativo = scanner.nextInt();
+            int j=1;
+            
+            while(j!=0){
+                String s = Integer.toString(indicativo);
+                if(s.length() != 5){
+                    
+                    System.out.println("ERRO: Digite os 5 primeiros números do CEP");
+                    System.out.println("\nDigite os 5 primeiros Digitos do CEP:");
+                    indicativo = scanner.nextInt();
+                    j=1;
+                }
+                else{
+                    j=0;
+                }
+            }
 
             System.out.println("Digite os 3 ultimos Digitos do CEP:");
             int extensao = scanner.nextInt();
+            int k=1;
+            
+            while(k!=0){
+                String s = Integer.toString(extensao);
+                if(s.length() != 3){
+                    
+                    System.out.println("ERRO: Digite os 3 últimos números do CEP");
+                    System.out.println("\nDigite os 3 últimos Digitos do CEP:");
+                    extensao = scanner.nextInt();
+                    k=1;
+                }
+                else{
+                    k=0;
+                }
+            }
 
             listaClientes.add(new Cliente(nomeCliente, cpf, idade, limite, divida, new CodigoPostal(indicativo, extensao)));
 

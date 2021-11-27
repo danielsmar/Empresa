@@ -26,7 +26,7 @@ public class Sistema {
             System.out.println("0- Sair"); //feito             
             System.out.println("1- Menu Produtos"); //feito       
             System.out.println("2- Menu Pessoas"); //feito       
-            System.out.println("3- Dados Empresa"); //feito     2
+            System.out.println("3- Dados Empresa"); //feito     
             System.out.println("------------------------------------");                
             int opcao = menu.nextInt();
             
