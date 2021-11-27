@@ -271,7 +271,7 @@ public class Empresa {
                 String s = Long.toString(cpf);
                 if(s.length() != 11){
                     
-                    System.out.println("Digite os 11 números do CPF");
+                    System.out.println("ERRO: Digite os 11 números do CPF");
                     System.out.println("\nDigite o CPF:");
                     cpf = scanner.nextLong();
                     i=1;
@@ -465,7 +465,7 @@ public class Empresa {
                 String s = Long.toString(cpf);
                 if(s.length() != 11){
                     
-                    System.out.println("Digite os 11 números do CPF");
+                    System.out.println("ERRO: Digite os 11 números do CPF");
                     System.out.println("\nDigite o CPF:");
                     cpf = scanner.nextLong();
                     i=1;
@@ -659,7 +659,7 @@ public class Empresa {
                 String s = Long.toString(cpf);
                 if(s.length() != 11){
                     
-                    System.out.println("Digite os 11 números do CPF");
+                    System.out.println("ERRO: Digite os 11 números do CPF");
                     System.out.println("\nDigite o CPF:");
                     cpf = scanner.nextLong();
                     i=1;
