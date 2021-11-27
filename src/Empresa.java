@@ -485,7 +485,7 @@ public class Empresa {
             System.out.println("\nDigite o Salário Bruto: ");
             Float salarioBruto = scanner.nextFloat();
 
-            System.out.println("Digite os 5 primeiros Digitos do CEP:");
+            System.out.println("\nDigite os 5 primeiros Digitos do CEP:");
             int indicativo = scanner.nextInt();
             int j=1;
             
@@ -503,7 +503,7 @@ public class Empresa {
                 }
             }
 
-            System.out.println("Digite os 3 ultimos Digitos do CEP:");
+            System.out.println("\nDigite os 3 ultimos Digitos do CEP:");
             int extensao = scanner.nextInt();
             int k=1;
             
@@ -675,7 +675,7 @@ public class Empresa {
             System.out.println("\nDigite a Dívida Atual:");
             float divida= scanner.nextFloat();
 
-            System.out.println("Digite os 5 primeiros Digitos do CEP:");
+            System.out.println("\nDigite os 5 primeiros Digitos do CEP:");
             int indicativo = scanner.nextInt();
             int j=1;
             
@@ -693,7 +693,7 @@ public class Empresa {
                 }
             }
 
-            System.out.println("Digite os 3 ultimos Digitos do CEP:");
+            System.out.println("\nDigite os 3 ultimos Digitos do CEP:");
             int extensao = scanner.nextInt();
             int k=1;
             
