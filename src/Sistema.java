@@ -1,4 +1,4 @@
-import java.io.IOException;
+import java.io.IOException; 
 import java.util.Scanner;
 
 public class Sistema {
@@ -19,14 +19,14 @@ public class Sistema {
         
         int i = 0;
 
-        do{
+        do{     
             
             
             System.out.println("--------SISTEMA EMPRESARIAL--------");
             System.out.println("0- Sair"); //feito             
             System.out.println("1- Menu Produtos"); //feito       
             System.out.println("2- Menu Pessoas"); //feito       
-            System.out.println("3- Dados Empresa"); //feito     
+            System.out.println("3- Dados Empresa"); //feito     2
             System.out.println("------------------------------------");                
             int opcao = menu.nextInt();
             
