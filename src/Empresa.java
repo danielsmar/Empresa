@@ -9,14 +9,14 @@ public class Empresa {
     private String cnpj;
     private String email;
     private String telefone;
-    private CodigoPostal cp= new CodigoPostal();
+    private CodigoPostal cp= new CodigoPostal(); //novo objeto codigo postal
 
     static Scanner scanner = new Scanner(System.in); 
     static Scanner menu = new Scanner(System.in);   
 
     
 
-    public Empresa(){
+    public Empresa(){                                                         //Construtor da classe Empresa;
         this.nome = "INSIGHT SOLUCOES EM TECNOLOGIA E COMPLIANCE LTDA.";
         this.cnpj = "29.779.498/0001-14";
         this.dataFundacao = ("26/08/2018");
@@ -26,27 +26,52 @@ public class Empresa {
         cp.setExtensao(125);
     }
 
-    public  void mostrar(){
-        System.out.println("---------DADOS EMPRESARIAIS---------");
+    public  void mostrar(){                                                     //Método para mostrar os dados da empresa;
+                                         
+        System.out.println("---------DADOS EMPRESARIAIS---------");             
         System.out.printf(getNome());    
         System.out.println("\nCNPJ: " + getCnpj());    
         System.out.println( "E-mail: "+ getEmail()); 
         System.out.println("Contato: " + getTelefone());         
         System.out.println("Data de Fundação: " + getDataFundacao()); 
         System.out.println("CEP: "+ cp.getIndicativo() + "-" +cp.getExtensao()) ;            
-        
+        System.out.println("");
+        socios();
+        System.out.println("");
 
+        System.out.println("---------CADASTROS---------");
+        System.out.println("Produtos Cadastrados: " + listaProduto.size()); 
+        System.out.println("Fornecedores Cadastrados: " + listaFornecedor.size());
+        System.out.println("Empregados Cadastrados: " + listaEmpregados.size());
+        System.out.println("Cliente Cadastrados: " + listaClientes.size());
+        System.out.println("");
+    
+
+    }
+
+    public void socios(){
+        System.out.println("--------FUNDADORES DA EMPRESA--------");
+        System.out.println("Daniel Valadares Marculano");
+        System.out.println("Danillo Hubner de Souza ");
+        System.out.println("Erick Vinicius Mariz Magalhães");
+        System.out.println("Guilherme Araujo Lopes");
+        System.out.println("Luiz Gustavo Barcelos  Fernandes Perez");
     }
     
-    private  List<Produto> listaProduto = new ArrayList<>();
+    private  List<Produto> listaProduto = new ArrayList<>();                    //Lista de Produtos
 
-    public  void Produtos(){
-        listaProduto.add(new Produto("MousePad Gamer",(float) 125.90, 19, 2525));
-        listaProduto.add(new Produto("Teclado Gamer",(float) 126.90, 18, 2526));
-        listaProduto.add(new Produto("HeadSet Gamer",(float) 127.90, 17, 2527));
+    public  void Produtos(){                                                   //Método para setar os produtos na lista
+        listaProduto.add(new Produto("Headset Gamer HyperX Cloud Stinger, Drivers 50mm",(float) 229.90, 19, 2525));
+        listaProduto.add(new Produto("HD Seagate BarraCuda, 2TB, 3.5´, SATA - ST2000DM008",(float) 329.90, 18, 2526));
+        listaProduto.add(new Produto("Teclado Mecânico Gamer T-Dagger Bora, RGB, Switch Outemu Blue, ABNT2",(float) 179.90, 17, 2527));
+        listaProduto.add(new Produto("Processador AMD Ryzen 7 5700G, 3.8GHz (4.6GHz Max Turbo)", (float)2139.90, 30, 45474));
+        listaProduto.add(new Produto("Computador PC Gamer Skill AMD Ryzen 3, Placa de vídeo Radeon VEGA 8, 8GB DDR4, HD 1TB", (float)2468.90, 30, 84544));
+        listaProduto.add(new Produto("Cadeira Gamer Husky Gaming Tempest 500", (float)1139.90, 30, 45474));
+        listaProduto.add(new Produto("Notebook Gamer Acer Nitro 5 AMD Ryzen 5 4600H, NVIDIA GeForce GTX 1650, 8GB RAM", (float)5439.90, 30, 45474));
+
     }
 
-    public  void mostrarProdutos(){
+    public  void mostrarProdutos(){                                            //Método para mostrar a lista de produtos
         System.out.printf("\n--------Lista de Produtos--------\n");
         int i = 1;
         
@@ -62,7 +87,7 @@ public class Empresa {
             } 
     }     
 
-    public  void addProdutos(){
+    public  void addProdutos(){                                                // Método para adicionar novos Produtos
         int n = 1;
 
         while(n != 0){
@@ -93,7 +118,7 @@ public class Empresa {
 
     }
 
-    public  void removerProduto(){
+    public  void removerProduto(){                                          //Remove um produto da Lista
         int j = 1;
 
         do{
@@ -127,7 +152,7 @@ public class Empresa {
         }while(j == 1);
     }
    
-    public  void menuProdutos(){
+    public  void menuProdutos(){                                            //Menu dos produtos
         
         int i = 0;
 
@@ -227,7 +252,7 @@ public class Empresa {
 
     private  List<Fornecedor> listaFornecedor = new ArrayList<>();
 
-    public  void Fornecedores(){
+    public  void Fornecedores(){                                    //Método para setar os Fornecedores na lista
         listaFornecedor.add(new Fornecedor("Evelyn Melo Barbosa", 15915815980L, 25, 2500F,3000F, new CodigoPostal(83030,370)));
         listaFornecedor.add(new Fornecedor("Julia Dias Goncalves", 15945815980L, 30, 2500F,3000F, new CodigoPostal(72872,063)));
         listaFornecedor.add(new Fornecedor("Nicolas Cunha Almeida", 15914747880L, 50, 2500F,3000F, new CodigoPostal(35900,017)));

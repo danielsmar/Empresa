@@ -7,13 +7,13 @@ public class Fornecedor extends Pessoa {
     private Float valorEmDivida;
     
     
-    public Fornecedor(String nome, Long contribuinte, int idade, float plafond, float valorEmDivida) {
+    public Fornecedor(String nome, Long contribuinte, int idade, float plafond, float valorEmDivida) {  //construtor Fornecedor
         super(nome, contribuinte, idade);
         this.plafond = plafond;
         this.valorEmDivida = valorEmDivida;       
     }
     
-    public Fornecedor(String nome, Long contribuinte, int idade, float plafond, float valorEmDivida, CodigoPostal cp) {
+    public Fornecedor(String nome, Long contribuinte, int idade, float plafond, float valorEmDivida, CodigoPostal cp) { //Construtor fornecedor Vinculado ao CEP;
         super(nome, contribuinte, idade, cp);
         this.plafond = plafond;
         this.valorEmDivida = valorEmDivida;       

@@ -7,7 +7,7 @@ public class Empregado extends Pessoa {
     private Float salario;
 
 
-    public Empregado(String nome, Long contribuinte, int idade, int numeroSeccao, Float salarioBase, String cargo) {
+    public Empregado(String nome, Long contribuinte, int idade, int numeroSeccao, Float salarioBase, String cargo) {  //construtor  do Empregado
         super(nome, contribuinte, idade);
         this.numeroSeccao = numeroSeccao;
         this.salarioBase = salarioBase;             
@@ -15,8 +15,8 @@ public class Empregado extends Pessoa {
         
     }  
 
-    public Empregado(String nome, Long contribuinte, int idade, int numeroSeccao, Float salarioBase, String cargo, CodigoPostal cp) {
-        super(nome, contribuinte, idade, cp);
+    public Empregado(String nome, Long contribuinte, int idade, int numeroSeccao, Float salarioBase, String cargo, CodigoPostal cp) { // Construtor com CEP vinculado ao Empregado
+        super(nome, contribuinte, idade, cp); 
         this.numeroSeccao = numeroSeccao;
         this.salarioBase = salarioBase;             
         this.cargo = cargo;
@@ -24,7 +24,7 @@ public class Empregado extends Pessoa {
     } 
 
     // fonte: https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/Pages/irs68.aspx
-    public Float calcularSalario() {     
+    public Float calcularSalario() {      //Calcula o Salário liquido de acordo com a taxa iRS.
         if(salarioBase <= 7112){
             iRS = 0.145F;
         }  

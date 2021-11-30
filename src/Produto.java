@@ -6,7 +6,7 @@ public class Produto {
     private int produtoID;
     
 
-    public Produto(String designacao, Float precoVendaPublico, int stock, int produtoID) {
+    public Produto(String designacao, Float precoVendaPublico, int stock, int produtoID) { // Construtor da Classe Produtos
         this.designacao = designacao;
         this.precoVendaPublico = precoVendaPublico;
         this.stock = stock;

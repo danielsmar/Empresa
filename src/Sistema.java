@@ -8,13 +8,13 @@ public class Sistema {
     }
     
     public static void main(String[] args) throws Exception {
-        Empresa emp = new Empresa();
+        Empresa emp = new Empresa(); //objeto empresa
 
-        Sistema.limparTela();
-        emp.Produtos();
-        emp.Fornecedores();
-        emp.Empregados();     
-        emp.Clientes();
+        Sistema.limparTela();  
+        emp.Produtos();  //adiciona produtos
+        emp.Fornecedores(); // adiciona Fornecedores
+        emp.Empregados();     // adiciona Empregados 
+        emp.Clientes(); // adiciona CLientes.
         
         
         int i = 0;

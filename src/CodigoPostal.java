@@ -1,8 +1,8 @@
 public class CodigoPostal {
     
-    private int indicativo;
-    private int extensao;
-    private String zona;
+    private int indicativo; //5 primeiros digitos do CEP
+    private int extensao;   //3 ultimos digitos do CEP
+    private String zona;    // Zona referente a regiao que o CEP pertence
     
 
         
@@ -10,13 +10,13 @@ public class CodigoPostal {
 
     }
 
-    public CodigoPostal(int indicativo, int extensao){
+    public CodigoPostal(int indicativo, int extensao){ //construtor do código Postal
         this.indicativo = indicativo;
         this.extensao = extensao;
     }   
 
 
-    public void mostraCp() {
+    public void mostraCp() {                            // o primeiro digito do CEP corresponde  a uma Zona no mapa do continente, 
         if (getIndicativo()/10000 == 0){
             this.setZona("|Grande SP|");
         } else if (getIndicativo()/10000 == 1){
@@ -38,7 +38,7 @@ public class CodigoPostal {
         } else{
             this.setZona("RS");
         }
-        System.out.println("  CEP: "+getIndicativo()+"-"+getExtensao()+", "+ getZona());
+        System.out.println("  CEP: "+getIndicativo()+"-"+getExtensao()+", "+ getZona()); // printa o CEP no formato xxxxx-xxx
     }
     
 

@@ -9,14 +9,14 @@ public class Pessoa {
 
     }
   
-    public Pessoa(String nome, Long contribuinte, int idade) {
+    public Pessoa(String nome, Long contribuinte, int idade) { //Construtor da classe Pessoa
         
         this.nome = nome;
         this.contribuinte = contribuinte;
         this.idade = idade;  
     }
     
-    public Pessoa(String nome, Long contribuinte, int idade, CodigoPostal cp){
+    public Pessoa(String nome, Long contribuinte, int idade, CodigoPostal cp){      // Construtor da Classe Pessoa Vinculado ao CEP;
         this.nome = nome;
         this.contribuinte = contribuinte;
         this.idade = idade;
